@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { ReactElement } from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
@@ -14,8 +15,7 @@ const Hero = () : ReactElement => {
           <Col sm={9}>
           <h1>Full Stack Web Developer</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+              I'm a full stack web developer with industry experience in start-up environments. I have a background in sales that gives me a unique perspective as a developer, and drives me to make changes that matter to the customer.
             </p>
             <p>
               <Button variant="primary">Learn more</Button>
