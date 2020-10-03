@@ -11,7 +11,7 @@ const Hero = () : ReactElement => {
     <Jumbotron>
       <Container>
         <Row>
-          <Col sm={8}>
+          <Col sm={9}>
           <h1>Full Stack Web Developer</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
@@ -21,7 +21,7 @@ const Hero = () : ReactElement => {
               <Button variant="primary">Learn more</Button>
             </p>
           </Col>
-          <Col sm={4}>
+          <Col sm={3}>
             <Image src="/Mares.png" fluid roundedCircle />
           </Col>
         </Row>
