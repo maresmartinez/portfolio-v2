@@ -13,18 +13,18 @@ const Layout = ({children} : { children : ReactElement }) : ReactElement => {
       </Head>
 
       <header>
-      <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">Mares</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="navbar-nav">
-        <Nav>
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="about-me">About</Nav.Link>
-          <Nav.Link href="projects">Projects</Nav.Link>
-          <Nav.Link href="technical-writing">Technical Writing</Nav.Link>
-        </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/">Mares</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
+            <Nav>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="about-me">About</Nav.Link>
+              <Nav.Link href="projects">Projects</Nav.Link>
+              <Nav.Link href="technical-writing">Technical Writing</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </header>
 
       <main className={styles.main}>
@@ -32,7 +32,7 @@ const Layout = ({children} : { children : ReactElement }) : ReactElement => {
       </main>
 
       <footer className={styles.footer}>
-        Foot
+        Copyright © Mariel Martinez
       </footer>
     </>
   );
