@@ -1,9 +1,8 @@
-import React from 'react';
-import styles from '../styles/Home.module.css'
+import React, { ReactNode } from 'react';
 
-export default function Home() : JSX.Element {
+export default function Home() : ReactNode {
   return (
-    <div className={styles.container}>
+    <div>
       <p>Placeholder</p>
     </div>
   )

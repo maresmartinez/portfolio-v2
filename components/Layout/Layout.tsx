@@ -1,12 +1,13 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement } from 'react';
+import Head from 'next/head';
 
-const Layout = ({children} : { children : ReactNode }) : JSX.Element => {
+const Layout = ({children} : { children : ReactElement }) : ReactElement => {
   return (
     <>
-      <head>
+      <Head>
         <title>Mares Martinez | Dev</title>
         <link rel="icon" href="/favicon.png" />
-      </head>
+      </Head>
 
       <header>
         <h1>Nav Under Construction</h1>

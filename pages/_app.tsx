@@ -1,10 +1,11 @@
-import '../styles/globals.css'
-import React, { ReactNode }  from 'react';
+import React, { ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import Layout from '../components/Layout';
 
-function MyApp({ Component, pageProps }: AppProps) : ReactNode {
-  
+import '../styles/globals.css'
+
+function MyApp({ Component, pageProps }: AppProps): ReactElement {
+
   return (
     <Layout>
       <Component {...pageProps} />
