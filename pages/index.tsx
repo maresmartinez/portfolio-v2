@@ -22,7 +22,7 @@ const HomePage = (): ReactNode => (
           </p>
         </Col>
         <Col sm={3}>
-          <Image src="/mares.png" fluid roundedCircle />
+          <Image src="/Mares.png" fluid roundedCircle />
         </Col>
       </Row>
     </Container>
