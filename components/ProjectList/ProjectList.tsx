@@ -28,7 +28,7 @@ const ProjectList = ({ limit }: ProjectListProps): JSX.Element => {
         <ProjectItem key={project.id} project={project} />
       ))}
       { limit && (
-        <Button variant="primary" href="projects" size="lg" block>See more</Button>
+        <Button variant="primary" href="/projects" size="lg" block>See more</Button>
       )}
     </div>
   );

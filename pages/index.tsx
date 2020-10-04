@@ -18,7 +18,7 @@ const HomePage = (): ReactNode => (
             I&apos;m a full stack web developer with industry experience in start-up environments. I have a background in sales that gives me a unique perspective as a developer, and drives me to make changes that matter to the customer.
         </p>
           <p>
-            <Button variant="primary" href="about-me">Learn more</Button>
+            <Button variant="primary" href="/about-me">Learn more</Button>
           </p>
         </Col>
         <Col sm={3}>
