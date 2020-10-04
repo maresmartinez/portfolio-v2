@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import styles from './Layout.module.css';
+import cs from 'classnames';
 
 const Layout = ({children} : { children : ReactElement }) : ReactElement => {
   return (
@@ -31,7 +32,7 @@ const Layout = ({children} : { children : ReactElement }) : ReactElement => {
         {children}
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={cs(styles.footer, 'bg-light')}>
         © 2020 Mariel Martinez
       </footer>
     </>
