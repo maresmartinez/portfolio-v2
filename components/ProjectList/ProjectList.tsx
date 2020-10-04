@@ -8,7 +8,7 @@ type ProjectListProps = {
 
 const ProjectList = ({ limit }: ProjectListProps): JSX.Element => {
   const { data, error } = useSWR(
-    'https://api.github.com/users/maresmartinez/repos',
+    'https://api.github.com/users/maresmartinez/repos?sort=updated',
     (url: string) => fetch(url).then((res) => res.json())
   );
 

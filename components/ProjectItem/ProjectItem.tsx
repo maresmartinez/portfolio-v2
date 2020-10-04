@@ -6,7 +6,7 @@ type ProjectItemProps = {
 
 const ProjectItem = ({ project }: ProjectItemProps): JSX.Element => (
   <div>
-    <h4>{project.name}</h4>
+    <h5>{project.name}</h5>
     <p>{project.description}</p>
   </div>
 )
