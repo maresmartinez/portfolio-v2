@@ -26,24 +26,22 @@ const AboutMePage = (): ReactNode => (
         </Col>
       </Row>
     </Container>
-    <div className={styles.experience}>
+    <Container className={styles.experience}>
       <h2>Experience</h2>
       <Card>
         <Card.Header as="h5">Roadmunk (Jun. 2019 - Present)</Card.Header>
         <Card.Body>
           <Card.Title>Web Developer</Card.Title>
-          <Card.Text>
-            <p>Roadmunk provides powerful software to help teams plan, create, and share beautiful product roadmaps.</p>
+          <p>Roadmunk provides powerful software to help teams plan, create, and share beautiful product roadmaps.</p>
 
-            <h6>My duties include:</h6>
-            <ul>
-              <li>Developing for major product features and platform projects, continuously delivering value to customers</li>
-              <li>Focusing on continuously improving our delivery of secure, testable, and supportable code</li>
-            </ul>
+          <h6>My duties include:</h6>
+          <ul>
+            <li>Developing for major product features and platform projects, continuously delivering value to customers</li>
+            <li>Focusing on continuously improving our delivery of secure, testable, and supportable code</li>
+          </ul>
 
-            <h6>Worked with:</h6>
-          React, Vue, KnockoutJS, GraphQL, PostgresSQL, MongoDB, Terraform, AWS SQS, AWS Lambda, AWS DynamoDB
-        </Card.Text>
+          <h6>Worked with:</h6>
+          <p>React, Vue, KnockoutJS, GraphQL, PostgresSQL, MongoDB, Terraform, AWS SQS, AWS Lambda, AWS DynamoDB</p>
           <Button variant="primary" href="https://roadmunk.com/" target="_blank">Learn more about Roadmunk</Button>
         </Card.Body>
       </Card>
@@ -51,19 +49,17 @@ const AboutMePage = (): ReactNode => (
         <Card.Header as="h5">Gocery (Apr. 2019 - Jun. 2019)</Card.Header>
         <Card.Body>
           <Card.Title>Software Developer Intern</Card.Title>
-          <Card.Text>
-            <p>Gocery is a leader in on-time grocery delivery in the GTA. They specialize in direct to consumer, restaurant, and wholesale grocery products.</p>
+          <p>Gocery is a leader in on-time grocery delivery in the GTA. They specialize in direct to consumer, restaurant, and wholesale grocery products.</p>
 
-            <h6>My duties included:</h6>
-            <ul>
-              <li>Implementing designs for the company&apos;s marketing website</li>
-              <li>Writing, modifying, integrating and testing software/mobile application code</li>
-              <li>Maintaining existing code by making modifications as required</li>
-            </ul>
+          <h6>My duties included:</h6>
+          <ul>
+            <li>Implementing designs for the company&apos;s marketing website</li>
+            <li>Writing, modifying, integrating and testing software/mobile application code</li>
+            <li>Maintaining existing code by making modifications as required</li>
+          </ul>
 
-            <h6>Worked with:</h6>
-          Angular 7, Node, PostgreSQL
-        </Card.Text>
+          <h6>Worked with:</h6>
+          <p>Angular 7, Node, PostgreSQL</p>
           <Button variant="primary" href="https://www.gocery.ca/" target="_blank">Learn more about Gocery</Button>
         </Card.Body>
       </Card>
@@ -71,13 +67,11 @@ const AboutMePage = (): ReactNode => (
         <Card.Header as="h5">Trend Hunter (Jan. 2017 - Dec. 2017)</Card.Header>
         <Card.Body>
           <Card.Title>Business Innovation Specialist (Sales)</Card.Title>
-          <Card.Text>
-            <p>Trend Hunter is the world&apos;s largest trend spotting platform. My job was to connect with executives in marketing, consumer insights, and innovation to help them accelerate their innovation process.</p>
-          </Card.Text>
+          <p>Trend Hunter is the world&apos;s largest trend spotting platform. My job was to connect with executives in marketing, consumer insights, and innovation to help them accelerate their innovation process.</p>
           <Button variant="primary" href="https://www.trendhunter.com/" target="_blank">Learn more about Trend Hunter</Button>
         </Card.Body>
       </Card>
-    </div>
+    </Container>
   </div>
 );
 

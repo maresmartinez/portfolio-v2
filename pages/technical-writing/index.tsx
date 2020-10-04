@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react';
+import Container from 'react-bootstrap/Container';
 
 const TechnicalWritingPage = (): ReactNode => (
-  <div>
-    <p>Technical Writing</p>
-  </div>
+  <Container>
+    <h1>Technical Writing</h1>
+  </Container>
 );
 
 export default TechnicalWritingPage;
