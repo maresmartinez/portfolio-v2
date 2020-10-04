@@ -32,7 +32,7 @@ const Layout = ({children} : { children : ReactElement }) : ReactElement => {
       </main>
 
       <footer className={styles.footer}>
-        Copyright © Mariel Martinez
+        © 2020 Mariel Martinez
       </footer>
     </>
   );
