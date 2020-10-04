@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RaspberryPiWebServer = (): JSX.Element => (
+const RaspberryPiWebServerReport = (): JSX.Element => (
   <div>
     <div>
       <h2>Create A Raspberry Pi Web Server</h2>
@@ -298,4 +298,4 @@ const RaspberryPiWebServer = (): JSX.Element => (
   </div >
 );
 
-export default RaspberryPiWebServer;
+export default RaspberryPiWebServerReport;
