@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import styles from './Home.module.css';
+import ProjectList from '../components/ProjectList';
 
 export default function Home(): ReactNode {
   return (
@@ -28,6 +29,8 @@ export default function Home(): ReactNode {
       </Container>
       <Jumbotron>
         <h3>Projects</h3>
+        <ProjectList limit={3} />
+        <Button variant="primary" href="projects">See more</Button>
       </Jumbotron>
     </div>
   )

@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import styles from './Layout.module.css';
 import cs from 'classnames';
 
-const Layout = ({children} : { children : ReactElement }) : ReactElement => {
+const Layout = ({ children }: { children: ReactElement }): ReactElement => {
   return (
     <>
       <Head>

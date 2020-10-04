@@ -1,9 +1,13 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement } from 'react';
+import ProjectList from '../../components/ProjectList';
 
-export default function Home() : ReactNode {
+const ProjectsPage = (): ReactElement => {
   return (
     <div>
-      <p>Projects</p>
+      <h1>Projects</h1>
+      <ProjectList />
     </div>
   )
 }
+
+export default ProjectsPage;
