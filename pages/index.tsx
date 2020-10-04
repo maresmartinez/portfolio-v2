@@ -27,9 +27,10 @@ const HomePage = (): ReactNode => (
       </Row>
     </Container>
     <Jumbotron>
-      <h3>Projects</h3>
-      <ProjectList limit={3} />
-      <Button variant="primary" href="projects">See more</Button>
+      <Container>
+        <h3>Projects</h3>
+        <ProjectList limit={3} />
+      </Container>
     </Jumbotron>
   </div>
 );

@@ -2,6 +2,7 @@ import React from 'react';
 import useSWR from 'swr';
 import ProjectItem from '../ProjectItem';
 import Spinner from 'react-bootstrap/Spinner'
+import Button from 'react-bootstrap/Button';
 
 type ProjectListProps = {
   limit?: number
@@ -26,8 +27,11 @@ const ProjectList = ({ limit }: ProjectListProps): JSX.Element => {
       {data.slice(0, limit).map((project: GithubRepo) => (
         <ProjectItem key={project.id} project={project} />
       ))}
+      { limit && (
+        <Button variant="primary" href="projects" size="lg" block>See more</Button>
+      )}
     </div>
-  )
+  );
 }
 
 export default ProjectList;
