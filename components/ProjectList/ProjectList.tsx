@@ -1,6 +1,7 @@
 import React from 'react';
 import useSWR from 'swr';
 import ProjectItem from '../ProjectItem';
+import Spinner from 'react-bootstrap/Spinner'
 
 type ProjectListProps = {
   limit?: number
@@ -17,7 +18,7 @@ const ProjectList = ({ limit }: ProjectListProps): JSX.Element => {
   }
 
   if (!data) {
-    return <div>Loading...</div>
+    return <Spinner animation="border" />
   }
 
   return (
