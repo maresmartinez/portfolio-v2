@@ -11,6 +11,11 @@ const Layout = ({ children }: { children: ReactElement }): ReactElement => {
     <>
       <Head>
         <title>Mares Martinez | Dev</title>
+        <meta property="og:title" content="Mares Martinez | Dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mares-martinez-portfolio.vercel.app/" />
+        <meta property="og:image:url" content="https://mares-martinez-portfolio.vercel.app/Mares.png" />
+        <meta property="og:description" content="Professional Portfolio for Full Stack Web Developer Mariel 'Mares' Martinez" />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
