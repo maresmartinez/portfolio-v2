@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 
 const SetupADDSReport = (): JSX.Element => (
   <div>
@@ -38,8 +39,8 @@ const SetupADDSReport = (): JSX.Element => (
           “powershell” and be sure to check off the box that says “Create this task with administrative privileges.”
             Click “OK” and the PowerShell terminal will open.</p>
           <figure>
-            <img src="/setup-adds/image001.png"
-              alt="The command to create a new task and open the PowerShell terminal" />
+            <Image src="/setup-adds/image001.png"
+              alt="The command to create a new task and open the PowerShell terminal" fluid />
           </figure>
         </li>
         <li>
@@ -50,8 +51,8 @@ const SetupADDSReport = (): JSX.Element => (
           <p>Press enter to execute the command. Your terminal will show the removal progress, like in the image below.
             Wait for the process to complete.</p>
           <figure>
-            <img src="/setup-adds/image002.png"
-              alt="The output of running the commands Get-WindowsFeature -Name *gui* | Remove-WindowsFeature -Restart" />
+            <Image src="/setup-adds/image002.png"
+              alt="The output of running the commands Get-WindowsFeature -Name *gui* | Remove-WindowsFeature -Restart" fluid />
           </figure>
         </li>
         <li>
@@ -59,8 +60,8 @@ const SetupADDSReport = (): JSX.Element => (
           out that operation automatically. After reboot, the server will display the logon screen as usual, except in
             Server Core after authenticating, only the command prompt will be displayed, like below.</p>
           <figure>
-            <img src="/setup-adds/image003.png"
-              alt="What windows server looks like after gui has been removed" />
+            <Image src="/setup-adds/image003.png"
+              alt="What windows server looks like after gui has been removed" fluid />
           </figure>
         </li>
       </ol>
@@ -84,7 +85,7 @@ const SetupADDSReport = (): JSX.Element => (
       router in order to set the foundation for the rest of my network. The following images shows the welcome screen
         for pfSense after bootup:</p>
       <figure>
-        <img src="/setup-adds/image004.png" alt="The menu pfsense shows at start up" />
+        <Image src="/setup-adds/image004.png" alt="The menu pfsense shows at start up" fluid />
       </figure>
       <p>The network address <strong>192.168.10.0/24</strong> will be used for this report. The pfSense LAN interface
         will need to be modified to reflect the new gateway address. The steps to configure this are below:</p>
@@ -105,8 +106,8 @@ const SetupADDSReport = (): JSX.Element => (
       </ol>
       <p>After following the steps above, the changes will be saved. The output should be as follows:</p>
       <figure>
-        <img src="/setup-adds/image005.png"
-          alt="The output of pfsense after changing the network settings" />
+        <Image src="/setup-adds/image005.png"
+          alt="The output of pfsense after changing the network settings" fluid />
       </figure>
       <p>The LAN interface has now been successfully configured.</p>
       <h4>Set Hostname and IP address with PowerShell</h4>
@@ -122,8 +123,8 @@ const SetupADDSReport = (): JSX.Element => (
           <p>You should have the following output:</p>
 
           <figure>
-            <img src="/setup-adds/image006.png"
-              alt="The output of PowerShell after the command New-NetIPAddress -IPAddress 192.168.10.5 -PrefixLength 24 -DefaultGateway 192.168.10.1 -InterfaceAlias Ethernet0 is run" />
+            <Image src="/setup-adds/image006.png"
+              alt="The output of PowerShell after the command New-NetIPAddress -IPAddress 192.168.10.5 -PrefixLength 24 -DefaultGateway 192.168.10.1 -InterfaceAlias Ethernet0 is run" fluid />
           </figure>
 
           <p>Please note that the InterfaceAlias may be different on your machine. You can view your interface alias
@@ -158,13 +159,13 @@ const SetupADDSReport = (): JSX.Element => (
       <code>Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools IncludeAllSubFeatures</code>
       <p>This command will then display a progress screen like this:</p>
       <figure>
-        <img src="/setup-adds/image007.png"
-          alt="The progress screen of PowerShell after the command Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools IncludeAllSubFeatures is run" />
+        <Image src="/setup-adds/image007.png"
+          alt="The progress screen of PowerShell after the command Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools IncludeAllSubFeatures is run" fluid />
       </figure>
       <p>The output after completion should look like this:</p>
       <figure>
-        <img src="/setup-adds/image008.png"
-          alt="The output of PowerShell after the command Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools IncludeAllSubFeatures is run" />
+        <Image src="/setup-adds/image008.png"
+          alt="The output of PowerShell after the command Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools IncludeAllSubFeatures is run" fluid />
       </figure>
       <p>After the installation is complete, you still need to promote your server to a domain controller. Please note
         that the domain Netbios name is dependant on your domainname. The extended command to do so is as follows:</p>
@@ -176,8 +177,8 @@ const SetupADDSReport = (): JSX.Element => (
       so, and make sure that it is both secure and something that you can remember. You should then see something like
         this:</p>
       <figure>
-        <img src="/setup-adds/image009.png"
-          alt="The output of PowerShell after creating an Active Directory forest" />
+        <Image src="/setup-adds/image009.png"
+          alt="The output of PowerShell after creating an Active Directory forest" fluid />
       </figure>
       <p>You will be prompted to restart the computer to complete the promotion process. Do so, and after restarting
         your server should successfully have been promoted to a domain controller.</p>
@@ -202,8 +203,8 @@ const SetupADDSReport = (): JSX.Element => (
           gateway as the server (192.168.10.1), and use the Windows 2012 Server as its DNS server (recall that its IP
             address is 192.168.10.5). Enter that information like so:</p>
           <figure>
-            <img src="/setup-adds/image010.png"
-              alt="The properties window to configure IPv4 network address and DNS statically" />
+            <Image src="/setup-adds/image010.png"
+              alt="The properties window to configure IPv4 network address and DNS statically" fluid />
           </figure>
           <p>Be sure to click OK in the above window, as well as OK in the Ethernet properties window before it. After
             doing so, the network settings are sufficient to allow you to add your Windows client to your domain.</p>
@@ -218,15 +219,15 @@ const SetupADDSReport = (): JSX.Element => (
         <li>
           <p>One of the options that comes up should be “Join a domain”. Select it.</p>
           <figure>
-            <img src="/setup-adds/image011.png"
-              alt="The icon that allows a user to join a domain" />
+            <Image src="/setup-adds/image011.png"
+              alt="The icon that allows a user to join a domain" fluid />
           </figure>
         </li>
         <li>
           <p>In the window that pops up, click the “Change…” button to change the domain (highlighted below).</p>
           <figure>
-            <img src="/setup-adds/image012.png"
-              alt="The systems properties window with the Change... button highlighted" />
+            <Image src="/setup-adds/image012.png"
+              alt="The systems properties window with the Change... button highlighted" fluid />
           </figure>
         </li>
         <li>
@@ -234,8 +235,8 @@ const SetupADDSReport = (): JSX.Element => (
           to select “Domain:” under the section “Member of”, and enter the name of your server’s domain (in my case
             marmarie.lab).</p>
           <figure>
-            <img src="/setup-adds/image013.png"
-              alt="The window which allows a user to change their computer's name and enter a domain to join" />
+            <Image src="/setup-adds/image013.png"
+              alt="The window which allows a user to change their computer's name and enter a domain to join" fluid />
           </figure>
         </li>
         <li>
@@ -243,15 +244,15 @@ const SetupADDSReport = (): JSX.Element => (
             join the domain. Enter “administrator” for the user name, and the administrator password <strong>for your
               Windows Server</strong> (not your client).</p>
           <figure>
-            <img src="/setup-adds/image014.png"
-              alt="A window to enter a username and password, administrator is the username that is entered" />
+            <Image src="/setup-adds/image014.png"
+              alt="A window to enter a username and password, administrator is the username that is entered" fluid />
           </figure>
         </li>
         <li>
           <p>After following these steps, you will see this alert:</p>
           <figure>
-            <img src="/setup-adds/image015.png"
-              alt="An alert saying Welcome to the marmarie.lab domain" />
+            <Image src="/setup-adds/image015.png"
+              alt="An alert saying Welcome to the marmarie.lab domain" fluid />
           </figure>
           <p>You will then be prompted to restart your computer. Do so, and when you restart, you will be able to sign
             into an account on your server’s domain.</p>
@@ -291,8 +292,8 @@ const SetupADDSReport = (): JSX.Element => (
           </p>
           <p>Here is what my output for that command looks like after creating my organizational units:</p>
           <figure>
-            <img src="/setup-adds/image016.png"
-              alt="The output showing what organizational units were created. Sales and Techs appear." />
+            <Image src="/setup-adds/image016.png"
+              alt="The output showing what organizational units were created. Sales and Techs appear." fluid />
           </figure>
         </li>
       </ul>
@@ -318,8 +319,8 @@ const SetupADDSReport = (): JSX.Element => (
           </p>
           <p>Here is what my output looks like:</p>
           <figure>
-            <img src="/setup-adds/image017.png"
-              alt="The output shows the security groups secSales and secTechs in the Sales and Techs OUs, respectively." />
+            <Image src="/setup-adds/image017.png"
+              alt="The output shows the security groups secSales and secTechs in the Sales and Techs OUs, respectively." fluid />
           </figure>
         </li>
       </ol>
@@ -370,13 +371,13 @@ const SetupADDSReport = (): JSX.Element => (
             executing them:</p>
           <code>Get-ADUser -Filter * -SearchBase “OU=Sales,DC=marmarie,DC=lab”</code>
           <figure>
-            <img src="/setup-adds/image018.png"
-              alt="The PowerShell output shows the users spilgrim, and rflowers, and kchau in the Sales OU" />
+            <Image src="/setup-adds/image018.png"
+              alt="The PowerShell output shows the users spilgrim, and rflowers, and kchau in the Sales OU" fluid />
           </figure>
           <code>Get-ADUser -Filter * -SearchBase “OU=Techs,DC=marmarie,DC=lab”</code>
           <figure>
-            <img src="/setup-adds/image019.png"
-              alt="The PowerShell output shows the users kpine, sstills, and wwells in the Techs OU" />
+            <Image src="/setup-adds/image019.png"
+              alt="The PowerShell output shows the users kpine, sstills, and wwells in the Techs OU" fluid />
           </figure>
         </li>
       </ol>
@@ -388,22 +389,22 @@ const SetupADDSReport = (): JSX.Element => (
         <li>
           <p>Enter in the user name for one of the users you created, and their associated password like so:</p>
           <figure>
-            <img src="/setup-adds/image020.png"
-              alt="Prompts to enter username and password" />
+            <Image src="/setup-adds/image020.png"
+              alt="Prompts to enter username and password" fluid />
           </figure>
         </li>
         <li>
           <p>You will be prompted to change your password, do so:</p>
           <figure>
-            <img src="/setup-adds/image021.png"
-              alt="Prompts to enter the current password, and two fields to enter the new password, which should match" />
+            <Image src="/setup-adds/image021.png"
+              alt="Prompts to enter the current password, and two fields to enter the new password, which should match" fluid />
           </figure>
         </li>
         <li>
           <p>Take a look at the start screen, and you should see that you are signed in:</p>
           <figure>
-            <img src="/setup-adds/image022.png"
-              alt="The Windows 8.1 start screen, with the logged in user Scott Pilgrim highlighted in a red box" />
+            <Image src="/setup-adds/image022.png"
+              alt="The Windows 8.1 start screen, with the logged in user Scott Pilgrim highlighted in a red box" fluid />
           </figure>
           <p>Congratulations, you now have a working domain and users to log in as!</p>
         </li>
@@ -420,27 +421,22 @@ const SetupADDSReport = (): JSX.Element => (
     <div>
       <h3>References</h3>
       <ol>
-        <li>Lecture material by Robert Pearce from SYST 23551 – Windows Administration, taken at Sheridan College</li>
         <li>Microsoft Windows Server 2012 PowerShell Documentation:
           <ul>
-            <li>o Get-ADOrganizationalUnit: <a
-              href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adorganizationalunit?view=winserver2012-ps">https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adorganizationalunit?view=winserver2012-ps</a>
+            <li><a href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adorganizationalunit?view=winserver2012-ps">Get-ADOrganizationalUnit</a>
             </li>
-            <li>o Get-ADGRoup: <a
-              href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adgroup?view=win10-ps">https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adgroup?view=win10-ps</a>
+            <li><a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adgroup?view=win10-ps">Get-ADGRoup</a>
             </li>
-            <li>o Get-ADUser: <a
-              href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-aduser?view=winserver2012-ps">https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-aduser?view=winserver2012-ps</a>
+            <li><a href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-aduser?view=winserver2012-ps">Get-ADUser</a>
             </li>
           </ul>
         </li>
-        <li>• TechRepublic article by Jesus Vigo, How to switch between GUI and Core in Windows Server 2012 using
-          PowerShell: <a
-            href="https://www.techrepublic.com/article/how-to-switch-between-gui-and-core-in-windows-server-2012-using-powershell/">https://www.techrepublic.com/article/how-to-switch-between-gui-and-core-in-windows-server-2012-using-powershell/</a>
+        <li><a href="https://www.techrepublic.com/article/how-to-switch-between-gui-and-core-in-windows-server-2012-using-powershell/">TechRepublic article by Jesus Vigo, How to switch between GUI and Core in Windows Server 2012 using
+          PowerShell</a>
         </li>
-        <li>• Thomas Maurer article, Windows Server 2012 – Add and Remove GUI: <a
-          href="https://www.thomasmaurer.ch/2012/05/windows-server-2012-add-and-remove-gui/">https://www.thomasmaurer.ch/2012/05/windows-server-2012-add-and-remove-gui/</a>
+        <li><a href="https://www.thomasmaurer.ch/2012/05/windows-server-2012-add-and-remove-gui/">Thomas Maurer article, Windows Server 2012 – Add and Remove GUI</a>
         </li>
+        <li>Lecture material by Robert Pearce from SYST 23551 – Windows Administration, taken at Sheridan College (2019)</li>
       </ol>
     </div>
   </div>

@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: ReactElement }): ReactElement => {
               <NavDropdown title="Technical Writing" id="technical-writing-dropdown">
                 <NavDropdown.Item href="/technical-writing">Overview</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/technical-writing/raspberripi-web-server">Create a Raspberry Pi Web Server</NavDropdown.Item>
+                <NavDropdown.Item href="/technical-writing/raspberrypi-web-server">Create a Raspberry Pi Web Server</NavDropdown.Item>
                 <NavDropdown.Item href="/technical-writing/setup-adds">Setting Up An Active Directory Domain</NavDropdown.Item>
                 <NavDropdown.Item href="/technical-writing/using-wds">Using Windows Deployment Services</NavDropdown.Item>
                 <NavDropdown.Item href="/technical-writing/adds-forest">Active Directory Forest with Multiple Servers</NavDropdown.Item>

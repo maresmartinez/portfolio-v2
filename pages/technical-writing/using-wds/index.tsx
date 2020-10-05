@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 
 const UsingWDSReport = (): JSX.Element => (
   <div>
@@ -122,12 +123,12 @@ const UsingWDSReport = (): JSX.Element => (
       <p>The commands above will have installed DNS with Active Directory by default. To see if DNS was installed
         successfully, you can check Server Manager. It should appear at the side like so:</p>
       <figure>
-        <img src="/using-wds/image001.png" />
+        <Image src="/using-wds/image001.png" fluid />
       </figure>
       <p>The next step is to configure DNS. In order to do so, you will need to open DNS Manager by right-clicking on
         the white space on the left, and selecting DNS Manager:</p>
       <figure>
-        <img src="/using-wds/image002.png" />
+        <Image src="/using-wds/image002.png" fluid />
       </figure>
       <p><em>Create a Reverse Zone</em></p>
       <p>Configuring a reverse zone is not something that the average Windows Server user will typically need. However,
@@ -138,7 +139,7 @@ const UsingWDSReport = (): JSX.Element => (
       open the New Zone Wizard. When reaching the Zone Type section, select Primary Zone and the checkbox to store the
         zone in Active Directory. These are the default options below.</p>
       <figure>
-        <img src="/using-wds/image003.png" />
+        <Image src="/using-wds/image003.png" fluid />
       </figure>
       <p>When selecting Active Directory Zone Replication Scope, your choice depends on your needs. In our case, we only
       have one server which comprises our entire forest. Therefore, option A and B below are essentially the same
@@ -147,14 +148,14 @@ const UsingWDSReport = (): JSX.Element => (
       domain, or across the entire forest? In our case, we are simply choosing the default option “To all DNS servers
         running on domain controllers in this domain”.</p>
       <figure>
-        <img src="/using-wds/image004.png" />
+        <Image src="/using-wds/image004.png" fluid />
       </figure>
       <p>For Reverse Lookup Zone Name, just select the default again: “IPv4 Reverse Lookup Zone”.</p>
       <p>Next, the wizard will ask for the Reverse Lookup Zone Name. The only thing you need to input is the network ID
       for your network. In our case, this is 10.100.50.0. You will only need to enter the bits that are part of the
         network mask, which is only the first 3 bytes:</p>
       <figure>
-        <img src="/using-wds/image005.png" />
+        <Image src="/using-wds/image005.png" fluid />
       </figure>
       <p>The Reverse lookup zone name will be generated automatically for us.</p>
       <p>Choose the default option in the next page again (Allow only secure dynamic updates).</p>
@@ -166,12 +167,12 @@ const UsingWDSReport = (): JSX.Element => (
       <p>In DNS Manager, open the containers on the left like so: DC01.mariel.ca &gt; Forward Lookup Zones &gt; mariel.ca, and
         right click in the whitespace on the right and select “New Host A or AAAA”:</p>
       <figure>
-        <img src="/using-wds/image006.png" />
+        <Image src="/using-wds/image006.png" fluid />
       </figure>
       <p>Since this record is for our router, the name is just router. The IP address is 10.100.50.1. We will also
         select “Create associated pointer (PTR) record”; this will create an entry in reverse lookup zones.</p>
       <figure>
-        <img src="/using-wds/image007.png" />
+        <Image src="/using-wds/image007.png" fluid />
       </figure>
       <p>Click “Add Host” and the record will be created for router. Test that it worked correctly by opening a command
         prompt and entering the command “ping router”, which should be successful.</p>
@@ -182,7 +183,7 @@ const UsingWDSReport = (): JSX.Element => (
       or feature-based installation” as the installation type, your server from the server pool, and when you reach
         “Server Roles” select the checkbox for DHCP server, like so:</p>
       <figure>
-        <img src="/using-wds/image008.png" />
+        <Image src="/using-wds/image008.png" fluid />
       </figure>
       <p>Select “Add Features” in the window that pops up. This will install any prerequisite tools that are required
         before you can install DHCP.</p>
@@ -191,7 +192,7 @@ const UsingWDSReport = (): JSX.Element => (
       <p>In the menu on the left of Server Manager, DHCP should have appeared. Click on it, and you should see a warning
         telling you that DHCP requires configuration. Click “More…” to configure.</p>
       <figure>
-        <img src="/using-wds/image009.png" />
+        <Image src="/using-wds/image009.png" fluid />
       </figure>
       <p>In the window that pops up, you will need to click “Complete DHCP configuration”, which will open the DHCP
       Post-Install configuration wizard. Simply keep everything at its default value, click “Commit”, and close the
@@ -199,7 +200,7 @@ const UsingWDSReport = (): JSX.Element => (
       <p>You should now be able to open the DHCP Manager in the same way we did for DNS Manager. Simply right-click on
         your DC01 server in Server Manager (under DHCP), and select “DHCP Manager”, like so:</p>
       <figure>
-        <img src="/using-wds/image010.png" />
+        <Image src="/using-wds/image010.png" fluid />
       </figure>
       <p><em>Configure DHCP</em></p>
       <p>In DHCP Manager, we are now going to create a new DHCP scope using another wizard. Open this up by looking at
@@ -207,7 +208,7 @@ const UsingWDSReport = (): JSX.Element => (
       <p>You can name your new scope anything you want. In our case, we will name it “Client Scope” and describe it as
         “Scope to be used for clients in domain”.</p>
       <figure>
-        <img src="/using-wds/image011.png" />
+        <Image src="/using-wds/image011.png" fluid />
       </figure>
       <p>When selecting the IP Range, we are going to use the range 10.100.50.100 to 10.100.50.150. Be wary of the
       default configuration settings that propagate to DHCP Client. It will default to a length of 8 with this range.
@@ -215,7 +216,7 @@ const UsingWDSReport = (): JSX.Element => (
       purposes, we need the length to be 24 (which is default for a Class C IP address. Be sure to change the length
         to this before clicking “Next”.</p>
       <figure>
-        <img src="/using-wds/image012.png" />
+        <Image src="/using-wds/image012.png" fluid />
       </figure>
       <p>The next page is to Add Exclusions and Delay. Exclusions mean that the DHCP server will not distribute any
       addresses within this range. We do not need exclusions in our environment. However, if you have an environment
@@ -225,7 +226,7 @@ const UsingWDSReport = (): JSX.Element => (
       one server to act as a preferred server (that one would not have a delay, and the others would). We will keep it
         at 0 for this example. Therefore, we’re essentially skipping this page.</p>
       <figure>
-        <img src="/using-wds/image013.png" />
+        <Image src="/using-wds/image013.png" fluid />
       </figure>
       <p>Next, we will be asked for lease duration. You will be informed that lease durations should typically be equal
       to the average time that the computer is connected to the same physical network. The default for this will be 8
@@ -237,7 +238,7 @@ const UsingWDSReport = (): JSX.Element => (
       <p>The Router (Default Gateway) will have an IP address of 10.100.50.1. enter that in the text box, and make sure
         to click “Add” before going to the next page.</p>
       <figure>
-        <img src="/using-wds/image014.png" />
+        <Image src="/using-wds/image014.png" fluid />
       </figure>
       <p>The next page will ask for the domain name and DNS servers. Since this server is tied to active directory, it
       has already recognized what we need. For my purposes, I will also need to add another DNS server which will give
@@ -245,7 +246,7 @@ const UsingWDSReport = (): JSX.Element => (
       on my active directory domain. The other DNS server I am adding is for my school’s DNS server. You can add the
         specific address you need for internet connectivity here.</p>
       <figure>
-        <img src="/using-wds/image015.png" />
+        <Image src="/using-wds/image015.png" fluid />
       </figure>
       <p>The next page asks for WINS server, we will not need to do anything there, so just click “Next”.</p>
       <p>When asked if you want to “Activate Scope”, select Yes.</p>
@@ -259,7 +260,7 @@ const UsingWDSReport = (): JSX.Element => (
       go to Manage and select “Add Roles and Features”. Again, select the default options until we get to the Server
         Roles page. Look for “Windows Deployment Services” and select that checkbox. </p>
       <figure>
-        <img src="/using-wds/image016.png" />
+        <Image src="/using-wds/image016.png" fluid />
       </figure>
       <p>Again, select “Add Features” when prompted to add all prerequisite features you need before configuring WDS.
         Keep choosing “Next” and keeping things at their default values. Confirm and click “Install” when prompted.</p>
@@ -277,7 +278,7 @@ const UsingWDSReport = (): JSX.Element => (
       Directory. When you open up the containers for Servers, you will see that there is a small warning symbol beside
         your server. Right-click on your server and select “Configure Server”.</p>
       <figure>
-        <img src="/using-wds/image017.png" />
+        <Image src="/using-wds/image017.png" fluid />
       </figure>
       <p>In the wizard that opens, click “Next” and select the install option called “Integrated with Active Directory”.
       </p>
@@ -290,7 +291,7 @@ const UsingWDSReport = (): JSX.Element => (
       <p>The next page will ask for Proxy DHCP Server settings. The proxy server should be checked automatically because
         we configured DHCP in the previous section. Therefore, keep everything as it is and select “Next”.</p>
       <figure>
-        <img src="/using-wds/image018.png" />
+        <Image src="/using-wds/image018.png" fluid />
       </figure>
       <p>The next page is for PXE Server Initial Settings. We are NOT going to use the default settings on this page. We
         are going to select “Respond to all client computers (known and unknown)”. </p>
@@ -300,7 +301,7 @@ const UsingWDSReport = (): JSX.Element => (
       will be a black square on it. This means that it is not running. Therefore, right-click on your server, go to
         All Tasks and select “Start”.</p>
       <figure>
-        <img src="/using-wds/image019.png" />
+        <Image src="/using-wds/image019.png" fluid />
       </figure>
       <p>The WDS service should start, and you will see a little green play button on your server.</p>
       <p><em>Adding a Boot Image</em></p>
@@ -308,13 +309,13 @@ const UsingWDSReport = (): JSX.Element => (
       Images”. You will see that there are no items to show, because we have not added a boot image yet. Right-click
         in the blank space and select “Add Boot Image…”.</p>
       <figure>
-        <img src="/using-wds/image020.png" />
+        <Image src="/using-wds/image020.png" fluid />
       </figure>
       <p>You are obviously going to need a boot image for this step. For me, my boot image was located on a network
       drive. You will need a boot.wim image for your own purposes, so browse and navigate to the folder you have it.
       </p>
       <figure>
-        <img src="/using-wds/image021.png" />
+        <Image src="/using-wds/image021.png" fluid />
       </figure>
       <p>At the Image Metadata page, I will use the name and description “Deploy / Install”.</p>
       <p>In the summary page, confirm the information and click “Next”. A task will begin to add the boot image to your
@@ -328,7 +329,7 @@ const UsingWDSReport = (): JSX.Element => (
       presses the ESC key” for BOTH Known clients and Unknown clients. We want this for both because the gold master
         Windows 8.1 client is an unknown client currently.</p>
       <figure>
-        <img src="/using-wds/image022.png" />
+        <Image src="/using-wds/image022.png" fluid />
       </figure>
       <p>Because we’ve made changes to the service properties, we should restart WDS. Do this by right-clicking on your
       server, going to “All Tasks” and selecting “Restart”. This will ensure that the changes you made are
@@ -338,36 +339,36 @@ const UsingWDSReport = (): JSX.Element => (
       <p>We previously created a boot.wim image. We are now going to use that file to create a capture image. To do so,
         right-click on the “Deploy / Install” image under boot images, and select “Create Capture Image…”.</p>
       <figure>
-        <img src="/using-wds/image023.png" />
+        <Image src="/using-wds/image023.png" fluid />
       </figure>
       <p>Enter the image name and description as “Capture”. Then, add the location and file name. Save it to
         C:\RemoteInstall\Boot\x64\Images\capture.wim. This is the same location as boot.wim.</p>
       <figure>
-        <img src="/using-wds/image024.png" />
+        <Image src="/using-wds/image024.png" fluid />
       </figure>
       <p>A task will then begin that will create the image. When it is done, select the checkbox option “Add image to
         the Windows Deployment server now”, and “Finish”.</p>
       <figure>
-        <img src="/using-wds/image025.png" />
+        <Image src="/using-wds/image025.png" fluid />
       </figure>
       <p>Enter the appropriate metadata in the prompt. When you are done, you should see the new capture image under
         Boot Images. </p>
       <figure>
-        <img src="/using-wds/image026.png" />
+        <Image src="/using-wds/image026.png" fluid />
       </figure>
       <p>Next, we will need to create an image group. This is where the image will be saved to when we capture it from
       our gold master. Simply go to the “Install Images” folder within your WDS console manager and right-click on the
       blank space. Select “Add Image Group”. I simply named mine “ImageGroup1”. You should then see it in the space to
         the right, though it will not have any items in it yet.</p>
       <figure>
-        <img src="/using-wds/image027.png" />
+        <Image src="/using-wds/image027.png" fluid />
       </figure>
       <p><em>Fixing the Winload.exe Error</em></p>
       <p>While we are still working with your WDS server, we are going to get ahead of a problem that will surely
       happen. If you were to skip this section and try to capture your Windows 8.1 client now, you will encounter the
         error below:</p>
       <figure>
-        <img src="/using-wds/image028.png" />
+        <Image src="/using-wds/image028.png" fluid />
       </figure>
       <p>Essentially, one of the Windows updates interferes with WDS being able to create a capture image, and triggers
       this error. To avoid getting this error yourself, we’re going to use the DISM utility. This solution was taken
@@ -382,13 +383,13 @@ const UsingWDSReport = (): JSX.Element => (
       temporary directory is. You should see the same output in the screenshot below, after waiting for the image to
         mount.</p>
       <figure>
-        <img src="/using-wds/image029.png" />
+        <Image src="/using-wds/image029.png" fluid />
       </figure>
       <p>Now, we just need to unmount that image and commit any changes. The command to do so is as follows:</p>
       <code>dism /unmount-win /mountdir:”C:\MountDir” /commit</code>
       <p>You should see the output below:</p>
       <figure>
-        <img src="/using-wds/image030.png" />
+        <Image src="/using-wds/image030.png" fluid />
       </figure>
       <p>This simple process will fix the winload.exe error that the capture image would otherwise trigger.</p>
       <h4>Starting Capture</h4>
@@ -402,34 +403,34 @@ const UsingWDSReport = (): JSX.Element => (
       “VM Options” tab, we will expand the “Boot Options” section. We are going to select the option to boot into BIOS
         the next time we power on the machine.</p>
       <figure>
-        <img src="/using-wds/image031.png" />
+        <Image src="/using-wds/image031.png" fluid />
       </figure>
       <p><em>BIOS</em></p>
       <p>Now, power on the Windows machine into BIOS. Navigate to the “Boot” tab, and highlight “Network boot from Intel
         E1000e”. Press SHIFT and PLUS until that option is at the top.</p>
       <figure>
-        <img src="/using-wds/image032.png" />
+        <Image src="/using-wds/image032.png" fluid />
       </figure>
       <p>Next, navigate to the “Exit” tab and select “Exit Saving Changes”. The client will now restart and go into
         network boot.</p>
       <p><em>Booting Up the Win 8.1 Client</em></p>
       <p>When your client restarts, you should see something similar to this:</p>
       <figure>
-        <img src="/using-wds/image033.png" />
+        <Image src="/using-wds/image033.png" fluid />
       </figure>
       <p>What’s happening is that your client is making a DHCP request to your server. This is why DHCP is required for
         WDS to work. After some time, you should obtain a client IP address, and see the output below:</p>
       <figure>
-        <img src="/using-wds/image034.png" />
+        <Image src="/using-wds/image034.png" fluid />
       </figure>
       <p>If you followed my instructions in the previous section (where you configured WDS to “Continue the PXE boot
       unless the user presses the ESC key”), you should now have the option to choose an operating system to start.
         You’ll see the two images that we added to WDS here. Select “Capture”.</p>
       <figure>
-        <img src="/using-wds/image035.png" />
+        <Image src="/using-wds/image035.png" fluid />
       </figure>
       <figure>
-        <img src="/using-wds/image036.png" />
+        <Image src="/using-wds/image036.png" fluid />
       </figure>
       <p>You will now launch into the WDS capture wizard.</p>
       <p><em>Capture Wizard</em></p>
@@ -437,13 +438,13 @@ const UsingWDSReport = (): JSX.Element => (
       navigate through this wizard using the TAB key to move between options, and ENTER to select an option. The
         capture wizard should open into a welcome window:</p>
       <figure>
-        <img src="/using-wds/image037.png" />
+        <Image src="/using-wds/image037.png" fluid />
       </figure>
       <p>When you click next, you will be prompted to choose a directory to capture from. Only volumes that contain
       operating systems prepared with sysprep will appear. For me, that is the D:\ drive. Name your image and give it
         a description that is appropriate for your needs.</p>
       <figure>
-        <img src="/using-wds/image038.png" />
+        <Image src="/using-wds/image038.png" fluid />
       </figure>
       <p>Next, we will need to specify where the install image will be saved to [9]. You will need to select a local
       Name and location. I simply browsed to the D:\ drive and named it win8_capture.wim. Then, select the optional
@@ -451,23 +452,23 @@ const UsingWDSReport = (): JSX.Element => (
       your fully qualified administrator user name (e.g. administrator@mariel.ca) and the appropriate password. After
         entering your credentials, select ImageGroup1 (which we created on the WDS server in the previous section).</p>
       <figure>
-        <img src="/using-wds/image039.png" />
+        <Image src="/using-wds/image039.png" fluid />
       </figure>
       <p>When you select next, the task of capturing your Windows 8.1 client will begin. Depending on your environment
       and resources, this may take a long time. It took me a little over an hour for this to complete. Keep in mind
       that we are copying an entire operating system image to our server, so this is to be expected. Maybe grab a
         snack while you are waiting for this step to complete!</p>
       <figure>
-        <img src="/using-wds/image040.png" />
+        <Image src="/using-wds/image040.png" fluid />
       </figure>
       <p>When your capture is ready, you should see this screen:</p>
       <figure>
-        <img src="/using-wds/image041.png" />
+        <Image src="/using-wds/image041.png" fluid />
       </figure>
       <p>Click “Finish”, and head over to your WDS server. Within the WDS management console, you should see the
         win8_capture image under ImageGroup1:</p>
       <figure>
-        <img src="/using-wds/image042.png" />
+        <Image src="/using-wds/image042.png" fluid />
       </figure>
       <h4>Pusing Our Image to the Blank Client</h4>
       <p>Now that we have successfully captured the Windows 8.1 image, we can now deploy that onto our blank client. The
@@ -478,25 +479,25 @@ const UsingWDSReport = (): JSX.Element => (
       <p>You should see the blank client network boot, and obtain an IP address using your DHCP server. Now instead of
         selecting “Capture”, select “Deploy / Install”</p>
       <figure>
-        <img src="/using-wds/image043.png" />
+        <Image src="/using-wds/image043.png" fluid />
       </figure>
       <p>You will now see a Windows Setup wizard appear.</p>
       <p><em>Setup Wizard</em></p>
       <p>Again, we may only navigate this wizard with the keyboard. With that in mind, select “Next”.</p>
       <figure>
-        <img src="/using-wds/image044.png" />
+        <Image src="/using-wds/image044.png" fluid />
       </figure>
       <p>Enter your credentials like so:</p>
       <figure>
-        <img src="/using-wds/image045.png" />
+        <Image src="/using-wds/image045.png" fluid />
       </figure>
       <p>You should be able to see the win8_capture image. Select it and press “Next”.</p>
       <figure>
-        <img src="/using-wds/image046.png" />
+        <Image src="/using-wds/image046.png" fluid />
       </figure>
       <p>Choose the drive you want to install Windows on and select “Next”. The installation process should begin.</p>
       <figure>
-        <img src="/using-wds/image047.png" />
+        <Image src="/using-wds/image047.png" fluid />
       </figure>
       <p>During this process, your client will restart. Make sure that the next time you boot into BIOS, you restore the
       boot options back to default. Otherwise it will keep booting from the network and you will end up in the windows
@@ -504,7 +505,7 @@ const UsingWDSReport = (): JSX.Element => (
       <p>When the installation process is done, you will be given the out of box experience. Go through it and set up
         your client to your preferences. Note that you can now use your mouse cursor!</p>
       <figure>
-        <img src="/using-wds/image048.png" />
+        <Image src="/using-wds/image048.png" fluid />
       </figure>
       <h4>Configuring the Blank Client</h4>
       <p><em>Add Client to Domain</em></p>
@@ -512,7 +513,7 @@ const UsingWDSReport = (): JSX.Element => (
       to your server’s IP address, go to System Properties, change the domain, and enter your administrator
         credentials for your Windows server. See Assignment 1 for more detailed instructions.</p>
       <figure>
-        <img src="/using-wds/image049.png" />
+        <Image src="/using-wds/image049.png" fluid />
       </figure>
       <p>You will need to restart the machine after doing this, and when it turns back on you can log into the
         administrator account of the mariel.ca domain.</p>
@@ -523,18 +524,18 @@ const UsingWDSReport = (): JSX.Element => (
       will see that one of the columns is “Unique ID”. This is the MAC address of your Windows 8 client. Write down
         that address.</p>
       <figure>
-        <img src="/using-wds/image050.png" />
+        <Image src="/using-wds/image050.png" fluid />
       </figure>
       <p>Now, right-click on “Reservations” and select “New Reservation…”.</p>
       <figure>
-        <img src="/using-wds/image051.png" />
+        <Image src="/using-wds/image051.png" fluid />
       </figure>
       <p>You will be prompted to enter your reservation information. Enter the fully qualified name of your client under
       Reservation Name, enter the IP address you want it to always have, type out the MAC address you copied down, and
       give it whatever description you want. Finally, select the supported types you want (I chose DHCP because that’s
         all I need), and click “Add”.</p>
       <figure>
-        <img src="/using-wds/image052.png" />
+        <Image src="/using-wds/image052.png" fluid />
       </figure>
       <p>Now that we have created the reservation, we need to release and get the IP address from the DHCP server. Right
       now, the client already has an IP address, and it has no reason to release that lease for 8 days (or however
@@ -543,18 +544,18 @@ const UsingWDSReport = (): JSX.Element => (
       <code>ipconfig /release</code>
       <code>ipconfig /renew</code>
       <figure>
-        <img src="/using-wds/image053.png" />
+        <Image src="/using-wds/image053.png" fluid />
       </figure>
       <p>As you can see above, the DHCP server should give the IP address that the reservation assigned.</p>
       <p>After that, open DNS Manager just to ensure that everything is working correctly. You should see the
       appropriate IP address next to CL-WIN8. Note that the DNS A Record was created automatically when you joined the
         client to the domain.</p>
       <figure>
-        <img src="/using-wds/image054.png" />
+        <Image src="/using-wds/image054.png" fluid />
       </figure>
       <p>The reverse zone entry should also have been created, as below.</p>
       <figure>
-        <img src="/using-wds/image055.png" />
+        <Image src="/using-wds/image055.png" fluid />
       </figure>
       <p>Once you’ve reached this point, your client is ready to go!</p>
     </div>
@@ -569,25 +570,25 @@ const UsingWDSReport = (): JSX.Element => (
     <div>
       <h3>References</h3>
       <ol>
-        <li>Windows Deployment Services on Windows Dev Center<br /> <a href="https://docs.microsoft.com/en-us/windows/desktop/wds/windows-deployment-services-portal">https://docs.microsoft.com/en-us/windows/desktop/wds/windows-deployment-services-portal</a>
+        <li><a href="https://docs.microsoft.com/en-us/windows/desktop/wds/windows-deployment-services-portal">Windows Deployment Services on Windows Dev Center</a>
         </li>
-        <li>Remote Installation Service (RIS) on Tech Target by Margaret Rouse<br /> <a href="[https://whatis.techtarget.com/definition/Remote-Installation-Service-RIS">[https://whatis.techtarget.com/definition/Remote-Installation-Service-RIS</a>
+        <li><a href="[https://whatis.techtarget.com/definition/Remote-Installation-Service-RIS">Remote Installation Service (RIS) on Tech Target by Margaret Rouse</a>
         </li>
-        <li>Windows Deployment Services on Wikipedia<br /> <a href="https://en.wikipedia.org/wiki/Windows_Deployment_Services">https://en.wikipedia.org/wiki/Windows_Deployment_Services</a>
+        <li><a href="https://en.wikipedia.org/wiki/Windows_Deployment_Services">Windows Deployment Services on Wikipedia</a>
         </li>
-        <li>Description of Windows Deployment Services (WDS) by Utilize Windows<br /> <a href="https://www.utilizewindows.com/description-of-windows-deployment-services-wds/">https://www.utilizewindows.com/description-of-windows-deployment-services-wds/</a>
+        <li><a href="https://www.utilizewindows.com/description-of-windows-deployment-services-wds/">Description of Windows Deployment Services (WDS) by Utilize Windows</a>
         </li>
-        <li>Configuring Windows Deployment Services on IT Pro Today by Karim Budzar<br /> <a href="https://www.itprotoday.com/mobile-management-and-security/configuring-windows-deployment-services-server-2012-r2-dhcp-running">https://www.itprotoday.com/mobile-management-and-security/configuring-windows-deployment-services-server-2012-r2-dhcp-running</a>
+        <li><a href="https://www.itprotoday.com/mobile-management-and-security/configuring-windows-deployment-services-server-2012-r2-dhcp-running">Configuring Windows Deployment Services on IT Pro Today by Karim Budzar</a>
         </li>
-        <li>Benefits of Using Windows Deployment Services on Source Daddy<br /> <a href="https://sourcedaddy.com/windows-7/benefits-using-windows-deployment-services.html">https://sourcedaddy.com/windows-7/benefits-using-windows-deployment-services.html</a>
+        <li><a href="https://sourcedaddy.com/windows-7/benefits-using-windows-deployment-services.html">Benefits of Using Windows Deployment Services on Source Daddy</a>
         </li>
-        <li>How to get started with Windows Deployment Services by Jesus Vigo<br /> <a href="https://www.techrepublic.com/article/how-to-get-started-with-windows-deployment-services/">https://www.techrepublic.com/article/how-to-get-started-with-windows-deployment-services/</a>
+        <li><a href="https://www.techrepublic.com/article/how-to-get-started-with-windows-deployment-services/">How to get started with Windows Deployment Services by Jesus Vigo</a>
         </li>
-        <li>WDS Capture Image – winload.exe corrupt or missing by kconner, reply by John Masson<br /> <a href="https://community.spiceworks.com/topic/472581-wds-capture-image-winload-exe-corrupt-or-missing?page=1#entry-3651117">https://community.spiceworks.com/topic/472581-wds-capture-image-winload-exe-corrupt-or-missing?page=1#entry-3651117</a>
+        <li><a href="https://community.spiceworks.com/topic/472581-wds-capture-image-winload-exe-corrupt-or-missing?page=1#entry-3651117">WDS Capture Image – winload.exe corrupt or missing by kconner, reply by John Masson</a>
         </li>
-        <li>How to CAPTURE Image and Deploy Image using WDS on IT Ingredients by Raakesh Kapoor<br /> <a href="http://www.itingredients.com/how-to-capture-image-and-deploy-image-/using-wds/">http://www.itingredients.com/how-to-capture-image-and-deploy-image-/using-wds/</a>
+        <li><a href="http://www.itingredients.com/how-to-capture-image-and-deploy-image-/using-wds/">How to CAPTURE Image and Deploy Image using WDS on IT Ingredients by Raakesh Kapoor</a>
         </li>
-        <li>Lecture material by Robert Pearce from SYST 23551 – Windows Administration, taken at Sheridan College</li>
+        <li>Lecture material by Robert Pearce from SYST 23551 – Windows Administration, taken at Sheridan College (2019)</li>
       </ol>
     </div>
   </div>

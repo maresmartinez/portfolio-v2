@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 
 const RaspberryPiWebServerReport = (): JSX.Element => (
   <div>
@@ -36,8 +37,8 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       go on
       in the background before the web page can be displayed. Here is how the browser turns a URL into a web page:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image001.png"
-          alt="Diagram of how an http client and server communicate and pass data" />
+        <Image src="/raspberrypi-web-server/image001.png"
+          alt="Diagram of how an http client and server communicate and pass data" fluid />
         <figcaption>Figure 1: The process by which HTTP sends data</figcaption>
       </figure>
       <ol>
@@ -69,8 +70,8 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
         Computer</strong>, respectively. The two computers will need to be connected to the same LAN network in order
       for this setup to work. The following diagram describes the setup used for this report.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image003.png"
-          alt="Network diagram of the environment needed to create a web server with a raspberry pi" />
+        <Image src="/raspberrypi-web-server/image003.png"
+          alt="Network diagram of the environment needed to create a web server with a raspberry pi" fluid />
         <figcaption>Figure 2: The network set-up used in this report (Created on Packet Tracer)</figcaption>
       </figure>
     </div>
@@ -90,8 +91,8 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       ALT + T), and type in the following command: <strong>“sudo apt-get install apache2 -y”</strong>. If it was
       successfully installed, the output should look something like this:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image005.png"
-          alt="Raspberry pi terminal after running sudo apt-get install apache2 -y" />
+        <Image src="/raspberrypi-web-server/image005.png"
+          alt="Raspberry pi terminal after running sudo apt-get install apache2 -y" fluid />
         <figcaption>Figure 3: Apache2 successfully installed on a Raspberry Pi</figcaption>
       </figure>
 
@@ -100,15 +101,15 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       <p>To ensure that everything worked perfectly, find the Server Computer’s IP address by typing the command
       “hostname -I” on the terminal, and visiting that IP address on the device’s web browser.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image006.png"
-          alt="Raspberry pi terminal after running hostname -I" />
+        <Image src="/raspberrypi-web-server/image006.png"
+          alt="Raspberry pi terminal after running hostname -I" fluid />
         <figcaption>Figure 4: How to find the IP address on the Server Computer</figcaption>
       </figure>
       <p><em>Visit the IP address from the Server Computer&apos;s web browser</em></p>
       <p>The IP address should display the Apache2 Default Page, which looks something like this [6]:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image007.png"
-          alt="Apache2 Ubuntu Default Page" />
+        <Image src="/raspberrypi-web-server/image007.png"
+          alt="Apache2 Ubuntu Default Page" fluid />
         <figcaption>Figure 5: The Default Page for Apache2 server</figcaption>
       </figure>
       <h4>Webpage Hosted</h4>
@@ -194,16 +195,16 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       command “cd /var/www/html” and then running the command “tree”. If Steps 3-6 were followed correctly, the output
       should look something like this:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image009.png"
-          alt="Raspberry pi terminal showing the file structure of the web server directory" />
+        <Image src="/raspberrypi-web-server/image009.png"
+          alt="Raspberry pi terminal showing the file structure of the web server directory" fluid />
         <figcaption>Figure 8: The file structure of the website used in this report</figcaption>
       </figure>
       <h4>Web Page Downloaded</h4>
       <p>Now that the HTML file, images and directories are in the correct place, visit the IP address of the Server
       Computer again. If the scripts provided in Section 4.3 were used, it should look something like this:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image010.png"
-          alt="Webpage displaying the html from figure 6" />
+        <Image src="/raspberrypi-web-server/image010.png"
+          alt="Webpage displaying the html from figure 6" fluid />
         <figcaption>Figure 9: The website created for this report being visited from the Server Computer.</figcaption>
       </figure>
       <p>It is now possible to visit this web page through any computer that is connected to the same LAN as the Server
@@ -222,16 +223,16 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       <p>Open the Wireshark Network Analyzer to capture packets from the HTTP requests that are about to be sent. If
       connected to the LAN via Wi-Fi, select that option:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image012.png"
-          alt="Wireshark activity capturing packets from accessing the server" />
+        <Image src="/raspberrypi-web-server/image012.png"
+          alt="Wireshark activity capturing packets from accessing the server" fluid />
         <figcaption>Starting a Wireshark capture session</figcaption>
       </figure>
       <p><em>Visit the IP address of the Server Computer</em></p>
       <p>Without visiting any other websites, navigate to the IP address of the Server Computer from a web browser on
       the Client Computer.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image014.png"
-          alt="The view of the html page from the client computer" />
+        <Image src="/raspberrypi-web-server/image014.png"
+          alt="The view of the html page from the client computer" fluid />
         <figcaption>The website created for this report being visited from the Client Computer.</figcaption>
       </figure>
       <p><em>Close Web Page and Stop Wireshark</em></p>
@@ -242,8 +243,8 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       <h4>TCP Connection Set-Up</h4>
       <p>By the time the exercise is complete, Wireshark will have captured packets from many different types of connections. The packets which are important to HTTP can be filtered using the display filter “tcp.port == 80” [7]. The filter should look something like this:</p>
       <figure>
-        <img src="/raspberrypi-web-server/image016.png"
-          alt="Wireshark packets filtered from port 80" />
+        <Image src="/raspberrypi-web-server/image016.png"
+          alt="Wireshark packets filtered from port 80" fluid />
         <figcaption>Figure 12: The website created for this report being visited from the Client Computer.</figcaption>
       </figure>
       <p>Notice that the two IP addresses shown in the display filter (192.168.0.100 and 192.168.0.244) correspond with the IP addresses of the Client Computer and the Server Computer from this network setup (see Figure 2). This is because the Server Computer’s web page was the only website visited by the Client Computer during the capture session.</p>
@@ -253,28 +254,28 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
       <p>Notice in the figure below that there are three different colours. These denote different TCP connections that are being made between the Client Computer and the Server Computer. The first three packets in each of these connections corresponds with what one would expect from a three way handshake (SYN first, SYN+ACK, then ACK).</p>
       <p>It was explained in Section 2 that there are multiple connections made between a client and a web server. A new connection is made for different images and files that are needed to load a full web page. As pictured above in the Wireshark capture, even for a simple web page like the one in this exercise, there are many http requests and responses that needed to be made to load the full page.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image018.png"
-          alt="Wireshark packets filtered from port 80" />
+        <Image src="/raspberrypi-web-server/image018.png"
+          alt="Wireshark packets filtered from port 80" fluid />
         <figcaption>Figure 13: The 3-Way Handshakes from Wireshark</figcaption>
       </figure>
       <h4>TCP Connection Teardown</h4>
       <p>A TCP connection is ended with a FIN flag in one of the TCP packets. See in Figure X below that the first FIN packet is sent by the Server Computer, and then acknowledged by the Client Computer. That happens once in green and once in grey. These are two separate TCP connections made between each computer that are closed separately.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image021.png"
-          alt="Wireshark packets showing the TCP connection teardown" />
+        <Image src="/raspberrypi-web-server/image021.png"
+          alt="Wireshark packets showing the TCP connection teardown" fluid />
         <figcaption>Figure 14: The TCP Packets with the FIN flags</figcaption>
       </figure>
       <h4>HTTP Request/Reply</h4>
       <p>The HTTP Stream can be followed on Wireshark by right-clicking on an HTTP packet, selecting “Follow” and then “HTTP Stream”.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image024.jpg"
-          alt="Wireshark options to access HTTP streams" />
+        <Image src="/raspberrypi-web-server/image024.jpg"
+          alt="Wireshark options to access HTTP streams" fluid />
         <figcaption>Figure 15: How to see the HTTP Streams</figcaption>
       </figure>
       <p>This will open a window that will show the HTTP packets with the corresponding request/reply packet. In the figure below, the red packets are requests from the Client Computer, and the blue packets are replies from the Server Computer. The reply in the figure below contain Content-type that is text/html. This is actually the index.html file that will be displayed by the browser. The subsequent replies and requests would contain the data for the four images that are displayed on the webpage and even the styles.css file.</p>
       <figure>
-        <img src="/raspberrypi-web-server/image025.png"
-          alt="HTTP steams showing GET request for index.html" />
+        <Image src="/raspberrypi-web-server/image025.png"
+          alt="HTTP steams showing GET request for index.html" fluid />
         <figcaption>Figure 16: The HTTP Stream showing the index.html file being sent to the Client Computer</figcaption>
       </figure>
     </div>
@@ -285,14 +286,15 @@ const RaspberryPiWebServerReport = (): JSX.Element => (
     <div>
       <h3>References</h3>
       <ol>
-        <li>Schuler, R. (2018). How Does the Internet Work?. [online] Web.stanford.edu. Available at: <a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a> [Accessed 2 Aug. 2018].</li>
-        <li>Kristol, D. (n.d.). HTTP. [online] Silicon-Press. Available at: <a href="http://www.silicon-press.com/briefs/brief.http/brief.pdf">http://www.silicon-press.com/briefs/brief.http/brief.pdf</a> [Accessed 2 Aug. 2018].</li>
-        <li>Chung, L. (n.d.). Client-Server Architecture. [online]. University of Texas. Available at: <a href="https://www.utdallas.edu/~chung/SA/2client.pdf">https://www.utdallas.edu/~chung/SA/2client.pdf</a> [Accessed 2 Aug. 2018].</li>
-        <li>Instant SSL (n.d.). What is HTTPS?. [online]. Instant SSL. Available at: <a href="https://www.instantssl.com/ssl-certificate-products/https.html">https://www.instantssl.com/ssl-certificate-products/https.html</a> [Accessed 2 Aug. 2018].</li>
-        <li>Apache Software Foundation. (2018). HTTP Server Project. [online]. Apache. Available at: <a href="https://httpd.apache.org/">https://httpd.apache.org/</a> [Accessed 3 Aug. 2018].</li>
-        <li>Fan, H. (2017). Setting Apache Virtual Hosts in Ubuntu 17.04. [online]. Medium. Available at: <a href="https://medium.com/@hugefan/setting-apache-virtual-hosts-in-ubuntu-17-04-88a58642940d">https://medium.com/@hugefan/setting-apache-virtual-hosts-in-ubuntu-17-04-88a58642940d</a> [Accessed 3 Aug, 2018].</li>
-        <li>Meier, B. (2011). Hyper Text Transfer Protocol. [online] Wireshark. Available at: <a href="https://wiki.wireshark.org/Hyper_Text_Transfer_Protocol">https://wiki.wireshark.org/Hyper_Text_Transfer_Protocol</a> [Accessed 3 Aug. 2018].</li>
-        <li>Wolf, I. (n.d.). Creating a Raspberry Pi 3 Model B Web Server. [Online]. The Info Wolf. Available at: <a href="https://theinfowolf.com/index.php/tut-home/creating-a-raspberry-pi-3-model-b-web-server/">https://theinfowolf.com/index.php/tut-home/creating-a-raspberry-pi-3-model-b-web-server/</a> [Accessed 2 Aug. 2018].</li>
+        <li><a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm">Schuler, R. (2018). How Does the Internet Work?. [online] Web.stanford.edu.</a></li>
+        <li><a href="http://www.silicon-press.com/briefs/brief.http/brief.pdf">Kristol, D. (n.d.). HTTP. [online] Silicon-Press</a></li>
+        <li><a href="https://www.utdallas.edu/~chung/SA/2client.pdf">Chung, L. (n.d.). Client-Server Architecture. [online]. University of Texas</a></li>
+        <li><a href="https://www.instantssl.com/ssl-certificate-products/https.html">Instant SSL (n.d.). What is HTTPS?. [online]. Instant SSL.</a></li>
+        <li><a href="https://httpd.apache.org/">Apache Software Foundation. (2018). HTTP Server Project. [online]. Apache.</a></li>
+        <li><a href="https://medium.com/@hugefan/setting-apache-virtual-hosts-in-ubuntu-17-04-88a58642940d">Fan, H. (2017). Setting Apache Virtual Hosts in Ubuntu 17.04. [online]. Medium.</a></li>
+        <li><a href="https://wiki.wireshark.org/Hyper_Text_Transfer_Protocol">Meier, B. (2011). Hyper Text Transfer Protocol. [online] Wireshark</a></li>
+        <li><a href="https://theinfowolf.com/index.php/tut-home/creating-a-raspberry-pi-3-model-b-web-server/">Wolf, I. (n.d.). Creating a Raspberry Pi 3 Model B Web Server. [Online]. The Info Wolf</a></li>
+        <li>Lecture material by Tarek El Salti from TELE 13167 – Intro to Data Communications and Networking, taken at Sheridan College (2018)</li>
       </ol>
     </div>
   </div >

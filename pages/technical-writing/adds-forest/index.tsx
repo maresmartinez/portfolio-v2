@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image';
 
 const ADDSForestReport = (): JSX.Element => (
   <div>
@@ -26,7 +27,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p>The following diagram describes the proposed environment for Big Potato’s network (please note GW and DNS
         values have been modified from the original proposal, which had some errors):</p>
       <figure>
-        <img src="/adds-forest/image001.png" />
+        <Image src="/adds-forest/image001.png" fluid />
       </figure>
       <h3>Forest Setup and Joining the Domain</h3>
       <p>This section will show the steps to implement the configuration, outlined in Part 1, for our new organization.
@@ -129,7 +130,7 @@ const ADDSForestReport = (): JSX.Element => (
             <li>Finally, you will also be warned that the server will be configured as a domain controller. Press Enter
             to accept the default
               <figure>
-                <img src="/adds-forest/image002.png" />
+                <Image src="/adds-forest/image002.png" fluid />
               </figure>
             </li>
             <li>Your server will need to restart before the promotion is complete</li>
@@ -193,14 +194,14 @@ const ADDSForestReport = (): JSX.Element => (
         <li>
           <p>In the window that appears, click “Find Now”</p>
           <figure>
-            <img src="/adds-forest/image004.png" />
+            <Image src="/adds-forest/image004.png" fluid />
           </figure>
         </li>
         <li>
           <p>The list on the left should populate with all machines that have joined the bigpotato.ca domain. Like
             below:</p>
           <figure>
-            <img src="/adds-forest/image005.png" />
+            <Image src="/adds-forest/image005.png" fluid />
           </figure>
         </li>
         <li>Add the server you want to control from the client with the arrow in the middle (in this example, I will add
@@ -228,7 +229,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p>When you first open the Sites and Services utility, and open up the file tree on the left, you will see all the
         servers that you have added under “Default-First-Site-Name”, like so:</p>
       <figure>
-        <img src="/adds-forest/image006.png" />
+        <Image src="/adds-forest/image006.png" fluid />
       </figure>
       <p>The first thing we’re going to do is rename that to reflect the first location, Calgary. You can do this by
         simply right-clicking on the site, and selecting “rename”.</p>
@@ -242,12 +243,12 @@ const ADDSForestReport = (): JSX.Element => (
       Minnesota. You will get a warning telling you that moving the server may affect group policies. The warning
         looks like this:</p>
       <figure>
-        <img src="/adds-forest/image007.png" />
+        <Image src="/adds-forest/image007.png" fluid />
       </figure>
       <p>We have yet to create any group policies, so we can ignore this message for now (i.e. click “Yes”).</p>
       <p>Make sure to move the other servers to the correct locations. Your file tree should look like this:</p>
       <figure>
-        <img src="/adds-forest/image008.png" />
+        <Image src="/adds-forest/image008.png" fluid />
       </figure>
       <h4>Create Subnets</h4>
       <p>Next, we need to create subnets to associate with these sites. After following this process, if new servers are
@@ -263,11 +264,11 @@ const ADDSForestReport = (): JSX.Element => (
       listed above. Then, select the appropriate site object for the prefix. In our case, 192.168.77.0/24 is used for
         Calgary. Your entries should appear similar to this:</p>
       <figure>
-        <img src="/adds-forest/image009.png" />
+        <Image src="/adds-forest/image009.png" fluid />
       </figure>
       <p>Click “Ok”, and repeat the process for London and Minnesota. Your “Subnets” folder should look like this:</p>
       <figure>
-        <img src="/adds-forest/image010.png" />
+        <Image src="/adds-forest/image010.png" fluid />
       </figure>
       <h4>Create Inter-Site Transports</h4>
       <p>We’re going to create site links between Calgary and London, Calgary and Minnesota, and London and Minnesota.
@@ -279,7 +280,7 @@ const ADDSForestReport = (): JSX.Element => (
       space, right-click and select “New Site Link…”. Our links are only going to include two sites each. For this
         first example, add Calgary and London to the site link and click “OK”.</p>
       <figure>
-        <img src="/adds-forest/image011.png" />
+        <Image src="/adds-forest/image011.png" fluid />
       </figure>
       <p>Repeat this process for Calgary and Minnesota, and London and Minnesota.</p>
       <p>Now that our site links are created, you can safely delete “DEFAULTIPSITELINK”.</p>
@@ -288,7 +289,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p>In the bottom section, you will see “Cost”. By default, it is at 100. We’re going to reduce that slightly, to
         90.</p>
       <figure>
-        <img src="/adds-forest/image012.png" />
+        <Image src="/adds-forest/image012.png" fluid />
       </figure>
       <p>After making the change, make sure to click “OK”. Now that the cost is lower, the servers will prefer to use
         the CAL-LON and CAL-MIN links for replication.</p>
@@ -317,7 +318,7 @@ const ADDSForestReport = (): JSX.Element => (
           <p>Install the DHCP server role</p>
           <code>Install-WindowsFeature -Name ‘DHCP’ -IncludeManagementTools</code>
           <figure>
-            <img src="/adds-forest/image013.png" />
+            <Image src="/adds-forest/image013.png" fluid />
           </figure>
         </li>
         <li>
@@ -332,7 +333,7 @@ const ADDSForestReport = (): JSX.Element => (
           <p>Get your scope ID</p>
           <code>Get-DhcpServerV4Scope</code>
           <figure>
-            <img src="/adds-forest/image014.png" />
+            <Image src="/adds-forest/image014.png" fluid />
           </figure>
         </li>
         <li>
@@ -343,7 +344,7 @@ const ADDSForestReport = (): JSX.Element => (
           <p>Restart DHCP Service</p>
           <code>Restart-Service dhcpserver</code>
           <figure>
-            <img src="/adds-forest/image015.png" />
+            <Image src="/adds-forest/image015.png" fluid />
           </figure>
         </li>
       </ol>
@@ -352,7 +353,7 @@ const ADDSForestReport = (): JSX.Element => (
       Server manager telling you that. Click the alert, and a wizard will launch. Simply commit to the default, and
         press OK when everything is done.</p>
       <figure>
-        <img src="/adds-forest/image016.png" />
+        <Image src="/adds-forest/image016.png" fluid />
       </figure>
       <p><em>Reservations with GUI</em></p>
       <p>Next, we’re going to create DHCP reservations. For our environment, we want all our Windows Clients to obtain
@@ -362,18 +363,18 @@ const ADDSForestReport = (): JSX.Element => (
       get it from the DHCP server we just configured). The client should then appear under Address Leases in DHCP
         Manager, like so:</p>
       <figure>
-        <img src="/adds-forest/image017.png" />
+        <Image src="/adds-forest/image017.png" fluid />
       </figure>
       <p>One of the columns you’ll see is “Unique ID”. Write down that value.</p>
       <p>Next, right-click on Reservations and select “New Reservation…”. Fill in the information like so:</p>
       <figure>
-        <img src="/adds-forest/image018.png" />
+        <Image src="/adds-forest/image018.png" fluid />
       </figure>
       <p>To ensure that everything worked correctly, open the command prompt on the windows client and enter the
       commands “ipconfig /release” and “ipconfig / renew”. The output should show that your client got the appropriate
         IP address.</p>
       <figure>
-        <img src="/adds-forest/image019.png" />
+        <Image src="/adds-forest/image019.png" fluid />
       </figure>
       <p>We’re going to repeat this process for each client, and on each DHCP server. Therefore, it might be easier to
         user PowerShell commands. That option is described below.</p>
@@ -394,14 +395,14 @@ const ADDSForestReport = (): JSX.Element => (
       Selection” page, select CAL-DC02 from the server pool. Keep the other options at their default and keep clicking
         “Next” until reaching Server Roles. Select the role “Web Server (IIS)” from the list:</p>
       <figure>
-        <img src="/adds-forest/image020.png" />
+        <Image src="/adds-forest/image020.png" fluid />
       </figure>
       <p>Add the features required and keep options at their default. Install when prompted.</p>
       <p><em>Editing the Default Web Site</em></p>
       <p>Open the IIS Manager by right-clicking on CAL-DC02 in Server Manager&gt;IIS. When you open the file tree, you
         should see “Default Web Site” under sites. Right-click on it and select “Explore”, like so:</p>
       <figure>
-        <img src="/adds-forest/image021.png" />
+        <Image src="/adds-forest/image021.png" fluid />
       </figure>
       <p>You’ll find yourself in a folder called “wwwroot” with two files in it. Right-click on iisstart and open with
         Notepad. You may write HTML in this file to test your ability to make changes.</p>
@@ -410,7 +411,7 @@ const ADDSForestReport = (): JSX.Element => (
       create a DNS alias to give that a more user friendly name later. Regardless, you should be able to see the
         lovely website we created.</p>
       <figure>
-        <img src="/adds-forest/image022.png" />
+        <Image src="/adds-forest/image022.png" fluid />
       </figure>
       <h4>Configure DNS</h4>
       <p>DNS is installed by default on all Active Directory Domain Controllers. We will now add records to it.</p>
@@ -421,7 +422,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p><em>Creating DNS Records</em></p>
       <p>For each server, we are going to need to create the following DNS records:</p>
       <figure>
-        <img src="/adds-forest/image023.png" />
+        <Image src="/adds-forest/image023.png" fluid />
       </figure>
       <p>To create each of these A records for CAL-DC01, use the following command:</p>
       <code>Add-DnsServerResourceRecordA -IPv4Address &quot;192.168.77.&quot; -Name &quot;cal-gw&quot; -ZoneName &quot;bigpotato.ca&quot; -AllowUpdateAny  -TimeToLive 01:00:00 -CreatePtr</code>
@@ -435,7 +436,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p><em>Testing with nslookup</em></p>
       <p>The following screenshots show that the A Records and Reverse Records were created successfully:</p>
       <figure>
-        <img src="/adds-forest/image024.png" />
+        <Image src="/adds-forest/image024.png" fluid />
       </figure>
       <h4>Creating Administrator Users</h4>
       <p>We are now going to create 4 users, one for each of our group members listed in the proposal section, and for
@@ -451,7 +452,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p>We can confirm that our users were created by running the command <code>Get-ADUser -Filter *</code> and the
         output should include the users we created:</p>
       <figure>
-        <img src="/adds-forest/image025.png" />
+        <Image src="/adds-forest/image025.png" fluid />
       </figure>
       <p>Now, in order to turn each of these users into a domain administrator, we will need to add them to the “Domain
         Admins” group. Here are the PowerShell commands to do that:</p>
@@ -459,7 +460,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p>We can confirm that our users were added to the group by running
         <code>Get-AdGroupMember -Identity “Domain Admins”</code>:</p>
       <figure>
-        <img src="/adds-forest/image026.png" />
+        <Image src="/adds-forest/image026.png" fluid />
       </figure>
       <h4>Creating a Security Group</h4>
       <p>In order to create a security group and add our users to it, execute these commands:</p>
@@ -468,7 +469,7 @@ const ADDSForestReport = (): JSX.Element => (
       <p>You can confirm that the users were added to this group with the command codeGet-ADGroupMember -Identity TECHS:
       </p>
       <figure>
-        <img src="/adds-forest/image027.png" />
+        <Image src="/adds-forest/image027.png" fluid />
       </figure>
       <h4>Creating a Share Folder on the Domain</h4>
       <p>We’re going to need to create a shared folder that can be accessed throughout the domain. This will be created
@@ -481,27 +482,27 @@ const ADDSForestReport = (): JSX.Element => (
         <li>
           <p>Right-click on the folder, select “Properties”, and in the “Sharing” tab, click “Share…”</p>
           <figure>
-            <img src="/adds-forest/image028.png" />
+            <Image src="/adds-forest/image028.png" fluid />
           </figure>
         </li>
         <li>
           <p>Click the arrow in the combo box that appears and select “Find people…”</p>
           <figure>
-            <img src="/adds-forest/image029.png" />
+            <Image src="/adds-forest/image029.png" fluid />
           </figure>
         </li>
         <li>
           <p>In the objects section, enter “techs” and click “Check Names”. The object for the TECHS security group
             should appear, like so:</p>
           <figure>
-            <img src="/adds-forest/image030.png" />
+            <Image src="/adds-forest/image030.png" fluid />
           </figure>
         </li>
         <li>
           <p>Click Share, and you should now be able to access the folder and its contents from all other machines in
             the domain via the file path \\CAL-DC02\techs</p>
           <figure>
-            <img src="/adds-forest/image031.png" />
+            <Image src="/adds-forest/image031.png" fluid />
           </figure>
         </li>
       </ol>
@@ -571,11 +572,11 @@ const ADDSForestReport = (): JSX.Element => (
     </div>
     <div>
       <ol>
-        <li>How to Configure DHCP with PowerShell on FAQForge<br /> <a href="https://www.faqforge.com/windows/configure-dhcp-powershell/">https://www.faqforge.com/windows/configure-dhcp-powershell/</a>
+        <li><a href="https://www.faqforge.com/windows/configure-dhcp-powershell/">How to Configure DHCP with PowerShell on FAQForge</a>
         </li>
-        <li>Installing IIS Components Windows Server 2012 on Laser Fiche<br /> <a href="https://www.laserfiche.com/support/webhelp/workflow/9.0/en-us/content/resources/Configuration/Installation%20and%20Migration/IIS%20Windows%20Server%202012.htm">https://www.laserfiche.com/support/webhelp/workflow/9.0/en-us/content/resources/Configuration/Installation%20and%20Migration/IIS%20Windows%20Server%202012.htm</a></li>
-        <li>Configure Reverse Lookup Zone with PowerShell – Windows Server Core 2016 on Read and Execute<br /> <a href="https://readandexecute.com/how-to/server-2016/dns/configure-reverse-lookup-zone-with-powershell-windows-server-core-2016/">https://readandexecute.com/how-to/server-2016/dns/configure-reverse-lookup-zone-with-powershell-windows-server-core-2016/</a></li>
-        <li>Lecture material by Robert Pearce from SYST 23551 – Windows Administration, taken at Sheridan College</li>
+        <li><a href="https://www.laserfiche.com/support/webhelp/workflow/9.0/en-us/content/resources/Configuration/Installation%20and%20Migration/IIS%20Windows%20Server%202012.htm">Installing IIS Components Windows Server 2012 on Laser Fiche</a></li>
+        <li><a href="https://readandexecute.com/how-to/server-2016/dns/configure-reverse-lookup-zone-with-powershell-windows-server-core-2016/">Configure Reverse Lookup Zone with PowerShell – Windows Server Core 2016 on Read and Execute</a></li>
+        <li>Lecture material by Robert Pearce from SYST 23551 – Windows Administration, taken at Sheridan College (2019)</li>
       </ol>
     </div>
   </div>
