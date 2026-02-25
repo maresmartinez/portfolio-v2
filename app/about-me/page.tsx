@@ -39,7 +39,7 @@ export default function AboutMePage() {
         <AnimatedSection delay={0.2}>
           <div className="relative aspect-square rounded-2xl overflow-hidden">
             <Image
-              src="/Mares2.jpg"
+              src="/Mares.jpg"
               alt="Mares Martinez"
               fill
               className="object-cover"
