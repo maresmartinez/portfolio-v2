@@ -1,16 +1,22 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
 }
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }

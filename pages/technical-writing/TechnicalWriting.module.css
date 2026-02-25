@@ -1,7 +1,0 @@
-.container > *:not(:first-child) {
-  margin-bottom: 30px;
-}
-
-.img {
-  margin-bottom: 20px;
-}

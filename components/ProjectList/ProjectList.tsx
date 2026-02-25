@@ -1,37 +1,56 @@
-import React from 'react';
-import useSWR from 'swr';
-import ProjectItem from '../ProjectItem';
-import Spinner from 'react-bootstrap/Spinner'
-import Button from 'react-bootstrap/Button';
+"use client";
+
+import useSWR from "swr";
+import { ProjectItem } from "@/components/ProjectItem/ProjectItem";
+import { Loader2 } from "lucide-react";
+import type { GithubRepo } from "@/lib/types";
+import Link from "next/link";
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type ProjectListProps = {
-  limit?: number
-}
+  limit?: number;
+};
 
-const ProjectList = ({ limit }: ProjectListProps): JSX.Element => {
-  const { data, error } = useSWR(
-    'https://api.github.com/users/maresmartinez/repos?sort=updated',
-    (url: string) => fetch(url).then((res) => res.json())
+export function ProjectList({ limit }: ProjectListProps) {
+  const { data, error } = useSWR<GithubRepo[]>(
+    "https://api.github.com/users/maresmartinez/repos?sort=updated",
+    fetcher
   );
 
   if (error) {
-    return <div>Failed to load</div>
+    return (
+      <p className="text-zinc-500 dark:text-zinc-400">
+        Failed to load projects.
+      </p>
+    );
   }
 
   if (!data) {
-    return <Spinner animation="border" />
+    return (
+      <div className="flex justify-center py-16">
+        <Loader2 className="animate-spin text-indigo-500" size={32} />
+      </div>
+    );
   }
 
   return (
     <div>
-      {data.slice(0, limit).map((project: GithubRepo) => (
-        <ProjectItem key={project.id} project={project} />
-      ))}
-      { limit && (
-        <Button variant="primary" href="/projects" size="lg" block>See more</Button>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {data.slice(0, limit).map((project) => (
+          <ProjectItem key={project.id} project={project} />
+        ))}
+      </div>
+      {limit && (
+        <div className="mt-8 text-center">
+          <Link
+            href="/projects"
+            className="text-indigo-600 hover:underline font-medium"
+          >
+            See all projects →
+          </Link>
+        </div>
       )}
     </div>
   );
 }
-
-export default ProjectList;
