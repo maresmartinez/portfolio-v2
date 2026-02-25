@@ -20,15 +20,15 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 py-24 relative">
           <AnimatedSection>
             <h1 className="text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-              Full Stack Web Developer
+              Senior Software Developer
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <p className="text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mb-8 leading-relaxed">
-              I&apos;m a full stack web developer with industry experience in
-              start-up environments. I have a background in sales that gives me
-              a unique perspective as a developer, and drives me to make changes
-              that matter to the customer.
+              Driven by a passion for creating technology that delivers real impact, I craft solutions
+              that marry technical expertise with a deep understanding of customer needs. With a background
+              in sales and 7+ years of software development experience, I bring a unique blend of technical
+              know-how and customer-centric approach to every project.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
