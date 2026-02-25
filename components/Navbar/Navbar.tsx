@@ -49,10 +49,10 @@ export function Navbar() {
             Home
           </Link>
           <Link
-            href="/about-me"
+            href="/experience"
             className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
           >
-            About
+            Experience
           </Link>
           <Link
             href="/projects"
@@ -127,7 +127,7 @@ export function Navbar() {
                 Home
               </Link>
               <Link
-                href="/about-me"
+                href="/experience"
                 onClick={() => setMobileOpen(false)}
                 className="px-4 py-2.5 rounded-lg text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
               >

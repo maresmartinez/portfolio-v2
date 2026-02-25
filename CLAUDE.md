@@ -20,7 +20,7 @@ app/                 # Next.js App Router pages
   layout.tsx         # Root layout — wraps with Providers, Navbar, Footer
   providers.tsx      # ThemeProvider wrapper ('use client')
   page.tsx           # Home (/)
-  about-me/
+  experience/
   projects/
   technical-writing/
     page.tsx

@@ -5,52 +5,15 @@ import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/AnimatedSection/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "About Me",
+  title: "Experience",
 };
 
-export default function AboutMePage() {
+export default function ExperiencePage() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-16">
       {/* Heading */}
       <AnimatedSection>
-        <h1 className="text-4xl font-bold mb-12">About Me</h1>
-      </AnimatedSection>
-
-      {/* Bio + photo */}
-      <div className="grid md:grid-cols-3 gap-12 mb-20">
-        <AnimatedSection className="md:col-span-2" delay={0.1}>
-          <p className="text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
-            I&apos;m a full stack web developer with a background in sales. My
-            experience working with clients has given me a unique perspective as
-            a developer, and drives me to make changes that matter to the
-            customer.
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
-            I currently work at Roadmunk, a customer-centric company with a web
-            based app that has become an end-to-end roadmapping platform. I
-            started out on the bug fixing team, but have since helped develop a
-            variety of new features across many of our products.
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            My main expertise is in JavaScript, but I have a passion for
-            learning and experimenting with new tools and technologies.
-          </p>
-        </AnimatedSection>
-        <AnimatedSection delay={0.2}>
-          <div className="relative aspect-square rounded-2xl overflow-hidden">
-            <Image
-              src="/Mares.jpg"
-              alt="Mares Martinez"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </AnimatedSection>
-      </div>
-
-      {/* Experience */}
-      <AnimatedSection>
-        <h2 className="text-2xl font-bold mb-8">Experience</h2>
+        <h1 className="text-4xl font-bold mb-12">Experience</h1>
       </AnimatedSection>
 
       <div className="flex flex-col gap-6">
