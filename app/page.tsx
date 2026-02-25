@@ -50,11 +50,11 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-12">
             <AnimatedSection className="md:col-span-2" delay={0.1}>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
-                I'm a Senior Software Developer with over 7 years of experience building
+                I&apos;m a Senior Software Developer with over 7 years of experience building
                 scalable systems on product-led teams. I have extensive experience working
                 with cloud infrastructure (especially AWS), C# ASP.NET, React, and TypeScript
-                to design performant applications. But what drives me isn't just writing code,
-                it's creating technology that genuinely makes a difference for its customers.
+                to design performant applications. But what drives me isn&apos;t just writing code,
+                it&apos;s creating technology that genuinely makes a difference for its customers.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
                 This philosophy stems from a time before I even worked in tech. My first full time
@@ -69,12 +69,12 @@ export default function HomePage() {
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 My transition into tech started by listening to coding podcasts on my commute and
                 studying on lunch breaks. Eventually, I decided to go all in and went back to school
-                for computer programming. I've now been in the tech industry for many years, and have
+                for computer programming. I&apos;ve now been in the tech industry for many years, and have
                 been privileged enough to live my dream and work on projects that I believe have
-                changed the future. I've worked at a startup that filled the grocery delivery space
+                changed the future. I&apos;ve worked at a startup that filled the grocery delivery space
                 before it became essential in 2020, built tools for product owners that have helped
                 them create their own cool things, and written impactful software that has protected
-                children. It's been a long time since my days prepping pitch decks, but I never want
+                children. It&apos;s been a long time since my days prepping pitch decks, but I never want
                 to forget the things I learned in sales. I still work to understand my customers and
                 connect them to things they actually want and need. My journey has taught me that
                 great products are made when technical expertise meets customer insight.
