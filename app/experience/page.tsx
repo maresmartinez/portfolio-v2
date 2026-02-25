@@ -16,7 +16,72 @@ export default function ExperiencePage() {
         <h1 className="text-4xl font-bold mb-12">Experience</h1>
       </AnimatedSection>
 
+
       <div className="flex flex-col gap-6">
+        <AnimatedSection delay={0.1}>
+          <Card>
+            <CardHeader>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                <div>
+                  <CardTitle>Senior Software Developer</CardTitle>
+                </div>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400 sm:whitespace-nowrap">
+                  Jan. 2023 — Present
+                </span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                <div>
+                  <CardTitle>Software Developer</CardTitle>
+                  <p className="text-indigo-600 font-medium mt-1">Magnet Forensics</p>
+                </div>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400 sm:whitespace-nowrap">
+                  Nov. 2020 — Dec. 2022
+                </span>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-zinc-600 dark:text-zinc-400 mb-4 text-sm leading-relaxed">
+                Magnet Forensics develops digital investigation software that can acquire, analyze,
+                report on, and manage evidence from digital sources such as computers, mobile devices,
+                IoT, and cloud services. I currently work on the Magnet NEXUS, which is a SaaS based
+                product that enables remote forensic collections at scale.
+              </p>
+              <h4 className="font-medium text-sm mb-2">My duties include:</h4>
+              <ul className="list-disc list-inside text-sm text-zinc-600 dark:text-zinc-400 mb-4 space-y-1">
+                <li>
+                  Leading cross-functional teams to design and deliver high-impact features, driving business value and resolving critical customer needs
+                </li>
+                <li>
+                  Mentoring junior developers to help them grow professionally and technically
+                </li>
+                <li>
+                  Contributing to architectural decisions that ensure scalable, secure, and efficient solutions
+                </li>
+                <li>
+                  Collaborating with teams to develop and implement innovative solutions that improve process efficiency and customer experience
+                </li>
+                <li>
+                  Focusing on delivering high-quality, secure, and reliable code that meets business requirements and customer needs
+                </li>
+              </ul>
+              <h4 className="font-medium text-sm mb-2">Worked with:</h4>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+                C#, AWS (Lambda, CloudFormation, CloudWatch, OpenSearch, ECS, SQS), TypeScript,
+                JavaScript (React, Redux), Clojure, Jenkins, PowerShell
+              </p>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href="https://www.magnetforensics.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn more about Magnet Forensics
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
         <AnimatedSection delay={0.1}>
           <Card>
             <CardHeader>
@@ -26,7 +91,7 @@ export default function ExperiencePage() {
                   <p className="text-indigo-600 font-medium mt-1">Roadmunk</p>
                 </div>
                 <span className="text-sm text-zinc-500 dark:text-zinc-400 sm:whitespace-nowrap">
-                  Jun. 2019 — Present
+                  Jun. 2019 — Nov. 2020
                 </span>
               </div>
             </CardHeader>
@@ -35,11 +100,10 @@ export default function ExperiencePage() {
                 Roadmunk provides powerful software to help teams plan, create,
                 and share beautiful product roadmaps.
               </p>
-              <h4 className="font-medium text-sm mb-2">My duties include:</h4>
+              <h4 className="font-medium text-sm mb-2">My duties included:</h4>
               <ul className="list-disc list-inside text-sm text-zinc-600 dark:text-zinc-400 mb-4 space-y-1">
                 <li>
-                  Developing for major product features and platform projects,
-                  continuously delivering value to customers
+                  Developing for major product features and platform projects, continuously delivering value to customers
                 </li>
                 <li>
                   Focusing on continuously improving our delivery of secure,

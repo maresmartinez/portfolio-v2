@@ -50,21 +50,34 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-12">
             <AnimatedSection className="md:col-span-2" delay={0.1}>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
-                I&apos;m a full stack web developer with a background in sales.
-                My experience working with clients has given me a unique
-                perspective as a developer, and drives me to make changes that
-                matter to the customer.
+                I'm a Senior Software Developer with over 7 years of experience building
+                scalable systems on product-led teams. I have extensive experience working
+                with cloud infrastructure (especially AWS), C# ASP.NET, React, and TypeScript
+                to design performant applications. But what drives me isn't just writing code,
+                it's creating technology that genuinely makes a difference for its customers.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">
-                I currently work at Roadmunk, a customer-centric company with a
-                web based app that has become an end-to-end roadmapping
-                platform. I started out on the bug fixing team, but have since
-                helped develop a variety of new features across many of our
-                products.
+                This philosophy stems from a time before I even worked in tech. My first full time
+                job was in sales at Trend Hunter, where I connected with people working in consumer
+                insights and innovation. I introduced them to a tool that tracked what consumers
+                were interested in, and projected trends that would speak to them. It was a cool job
+                that exposed me to a lot of upcoming trends and technology. Every day, I was surrounded
+                by folks talking about the future of retail, up and coming start ups, and a literal
+                robot that would say good morning to us (RIP Jibo). All of this cool stuff eventually
+                shifted my passion from selling the future, to wanting to build it myself.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                My main expertise is in JavaScript, but I have a passion for
-                learning and experimenting with new tools and technologies.
+                My transition into tech started by listening to coding podcasts on my commute and
+                studying on lunch breaks. Eventually, I decided to go all in and went back to school
+                for computer programming. I've now been in the tech industry for many years, and have
+                been privileged enough to live my dream and work on projects that I believe have
+                changed the future. I've worked at a startup that filled the grocery delivery space
+                before it became essential in 2020, built tools for product owners that have helped
+                them create their own cool things, and written impactful software that has protected
+                children. It's been a long time since my days prepping pitch decks, but I never want
+                to forget the things I learned in sales. I still work to understand my customers and
+                connect them to things they actually want and need. My journey has taught me that
+                great products are made when technical expertise meets customer insight.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
