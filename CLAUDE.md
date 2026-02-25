@@ -39,7 +39,7 @@ components/
 lib/
   types.ts           # GithubRepo type (named export)
   utils.ts           # cn() utility (clsx + tailwind-merge)
-public/              # Static assets — referenced with absolute paths (e.g. /Mares.png)
+public/              # Static assets — referenced with absolute paths (e.g. /Mares.jpg)
 styles/
   globals.css        # Tailwind v4 imports + @custom-variant dark
 ```
