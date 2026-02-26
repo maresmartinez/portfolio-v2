@@ -67,13 +67,16 @@ export function Navbar() {
             onMouseEnter={() => setTwOpen(true)}
             onMouseLeave={() => setTwOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+            <Link
+              href="/technical-writing"
+              className="flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
+            >
               Technical Writing
               <ChevronDown
                 size={14}
                 className={`transition-transform ${twOpen ? "rotate-180" : ""}`}
               />
-            </button>
+            </Link>
             {twOpen && (
               <div className="absolute top-full left-0 pt-2 w-72 z-50">
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-lg py-1 overflow-hidden">
